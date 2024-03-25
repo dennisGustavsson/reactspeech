@@ -8,6 +8,7 @@ const Home = () => {
 
 			<div className='h-screen flex items-center flex-col'>
 				<SpeechRecognizerComponent />
+				
 			</div>
 		</>
 	);
