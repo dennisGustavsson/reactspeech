@@ -1,19 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-	return (
-		<nav className='w-full'>
-			<ul className='flex flex-row my-4'>
-				<li className='underline decoration-sky-500 mx-3'>
-					<Link to='/'>Home</Link>
-				</li>
-				<li>
-					<Link to='/about'>About</Link>
-				</li>
-			</ul>
-		</nav>
-	);
+  return (
+    <nav className="container m-4 text-lg font-semibold text-white">
+      <NavLink
+        to="/"
+        className={({ isActive, isPending }) =>
+          `mx-2 ${
+            isPending
+              ? "pending"
+              : isActive
+              ? "underline decoration-sky-500"
+              : ""
+          }`
+        }
+      >
+        Transcribe
+      </NavLink>
+
+      <NavLink
+        to="/about"
+        className={({ isActive, isPending }) =>
+          `mx-2 ${
+            isPending
+              ? "pending"
+              : isActive
+              ? "underline decoration-sky-500"
+              : ""
+          }`
+        }
+      >
+        About
+      </NavLink>
+    </nav>
+  );
 };
 
 export default Navbar;
